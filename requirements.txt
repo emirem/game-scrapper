@@ -1,0 +1,16 @@
+# Function dependencies, for example:
+# package>=version
+chromedriver-autoinstaller==0.3.1
+entrypoints==0.3
+httplib2==0.14.0
+hyperlink==19.0.0
+jsonpatch==1.22
+jsonpointer==2.0
+jsonschema==3.2.0
+mysqlclient==2.1.0
+oauthlib==3.1.0
+python-dotenv==0.20.0
+requests==2.27.1
+selenium==4.2.0
+undetected-chromedriver==3.1.5.post4
+urllib3==1.26.9

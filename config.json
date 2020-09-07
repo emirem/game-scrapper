@@ -1,0 +1,150 @@
+[
+  {
+    "id": "steam",
+    "name": "Steam",
+    "url": "https://store.steampowered.com",
+    "categories": [
+      {
+        "id": "new_releases",
+        "name": "New releases",
+        "url": "https://store.steampowered.com/explore/new",
+        "listItemSelector": "#tab_newreleases_content > a",
+        "itemImageSelector": ".tab_item_cap_img",
+        "itemNameSelector": ".tab_item_name",
+        "itemDetailsSelector": ".tab_item_details",
+        "itemPriceSelector": ".discount_final_price",
+        "itemDiscountSelector": ".discount_pct",
+        "releaseDateSelector": "",
+        "itemLinkSelector": "",
+        "requiresHostPrefix": false
+      },
+      {
+        "id": "top_sellers",
+        "name": "Top sellers",
+        "url": "https://store.steampowered.com/search/?filter=topsellers&os=win",
+        "listItemSelector": "#search_resultsRows > a",
+        "itemImageSelector": ".search_capsule > img",
+        "itemNameSelector": ".title",
+        "itemDetailsSelector": "",
+        "itemPriceSelector": ".search_price",
+        "itemDiscountSelector": ".search_discount",
+        "releaseDateSelector": ".search_released",
+        "itemLinkSelector": "",
+        "requiresHostPrefix": false
+      },
+      {
+        "id": "upcoming_releases",
+        "name": "Upcoming releases",
+        "url": "https://store.steampowered.com/explore/upcoming/",
+        "listItemSelector": "#tab_popular_comingsoon_content > a",
+        "itemImageSelector": ".tab_item_cap_img",
+        "itemNameSelector": ".tab_item_name",
+        "itemDetailsSelector": ".tab_item_details",
+        "itemPriceSelector": ".discount_prices",
+        "itemDiscountSelector": "",
+        "releaseDateSelector": ".release_date",
+        "itemLinkSelector": "",
+        "requiresHostPrefix": false
+      }
+    ]
+  },
+  {
+    "id": "epic",
+    "name": "Epic store",
+    "url": "https://store.epicgames.com/en-US/",
+    "categories": [
+      {
+        "id": "new_releases",
+        "name": "New releases",
+        "url": "https://store.epicgames.com/en-US/browse?sortBy=releaseDate&sortDir=DESC&count=40",
+        "listItemSelector": "[data-testid=section-wrapper-content] section > ul li",
+        "itemImageSelector": "img[data-testid=picture-image]",
+        "itemNameSelector": "[data-testid=offer-title-info-title]",
+        "itemDetailsSelector": "",
+        "itemPriceSelector": "",
+        "itemDiscountSelector": "",
+        "releaseDateSelector": "",
+        "itemLinkSelector": "a",
+        "requiresHostPrefix": true
+      },
+      {
+        "id": "top_sellers",
+        "name": "Top sellers",
+        "url": "https://store.epicgames.com/en-US/collection/top-sellers",
+        "listItemSelector": "[data-testid=section-wrapper-content] section > ul > div",
+        "itemImageSelector": "img[data-testid=picture-image]",
+        "itemNameSelector": "[data-testid=offer-title-info-title]",
+        "itemDetailsSelector": "",
+        "itemPriceSelector": "",
+        "itemDiscountSelector": "",
+        "releaseDateSelector": "",
+        "itemLinkSelector": "a",
+        "requiresHostPrefix": true
+      },
+      {
+        "id": "upcoming_releases",
+        "name": "Upcoming releases",
+        "url": "https://store.epicgames.com/en-US/browse?sortBy=comingSoon&sortDir=ASC&count=40",
+        "listItemSelector": "[data-testid=section-wrapper-content] section > ul li",
+        "itemImageSelector": "img[data-testid=picture-image]",
+        "itemNameSelector": "[data-testid=offer-title-info-title]",
+        "itemDetailsSelector": "",
+        "itemPriceSelector": "",
+        "itemDiscountSelector": "",
+        "releaseDateSelector": "",
+        "itemLinkSelector": "a",
+        "requiresHostPrefix": true
+      }
+    ]
+  },
+  {
+    "id": "ubisoft",
+    "name": "Ubisoft store",
+    "url": "https://store.ubi.com/ie",
+    "categories": [
+      {
+        "id": "new_releases",
+        "name": "New releases",
+        "url": "https://store.ubi.com/ie/last-games",
+        "listItemSelector": "#search-result-items > li",
+        "itemImageSelector": "img.product_image",
+        "itemNameSelector": ".prod-title",
+        "itemDetailsSelector": ".card-subtitle",
+        "itemPriceSelector": ".price-sales.standard-price",
+        "itemDiscountSelector": ".deal-percentage",
+        "releaseDateSelector": "",
+        "itemLinkSelector": ".thumb-link",
+        "requiresHostPrefix": true
+
+      },
+      {
+        "id": "top_sellers",
+        "name": "Top sellers",
+        "url": "https://store.ubi.com/ie/best-sellers",
+        "listItemSelector": "#search-result-items > li",
+        "itemImageSelector": "img.product_image",
+        "itemNameSelector": ".prod-title",
+        "itemDetailsSelector": ".card-subtitle",
+        "itemPriceSelector": ".price-sales.standard-price",
+        "itemDiscountSelector": ".deal-percentage",
+        "releaseDateSelector": "",
+        "itemLinkSelector": ".thumb-link",
+        "requiresHostPrefix": true
+      },
+      {
+        "id": "upcoming_releases",
+        "name": "Upcoming releases",
+        "url": "https://store.ubi.com/ie/coming-soon",
+        "listItemSelector": "#search-result-items > li",
+        "itemImageSelector": "img.product_image",
+        "itemNameSelector": ".prod-title",
+        "itemDetailsSelector": ".card-subtitle",
+        "itemPriceSelector": ".price-sales.standard-price",
+        "itemDiscountSelector": ".deal-percentage",
+        "releaseDateSelector": ".product-availability-label",
+        "itemLinkSelector": ".thumb-link",
+        "requiresHostPrefix": true
+      }
+    ]
+  }
+]

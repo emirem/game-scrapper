@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS games (
+  id INT AUTO_INCREMENT primary key NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  details VARCHAR(255) NOT NULL,
+  img_url VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL,
+  price VARCHAR(20) NOT NULL,
+  discount_amount VARCHAR(20) NOT NULL,
+  store_id VARCHAR(50) NOT NULL,
+  category_id VARCHAR(50) NOT NULL,
+  release_date VARCHAR(50),
+  date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)

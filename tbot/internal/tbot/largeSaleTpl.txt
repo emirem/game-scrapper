@@ -1,0 +1,4 @@
+Here are some {{.Percentage}}% sales on {{.StoreName}} today:
+{{range $key, $val := .Games}}
+• {{$val.Title}} at {{$val.Discount_amount}}
+{{- end}}
