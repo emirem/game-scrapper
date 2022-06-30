@@ -75,7 +75,7 @@ func main() {
 	var storeId string
 	var includeWeekAnalysis, skipStores bool
 
-	flag.StringVar(&storeId, "sid", "steam", "Store id")
+	flag.StringVar(&storeId, "sid", "", "Store id")
 	flag.BoolVar(&skipStores, "skip", false, "Skips store tweets")
 	flag.BoolVar(&includeWeekAnalysis, "w", false, "Includes week analysis")
 
