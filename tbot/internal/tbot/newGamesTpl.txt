@@ -1,4 +1,4 @@
-These are the new games on {{.StoreName}} today:
+These are the new #games on #{{.StoreName}} today:
 {{range $key, $val := .Games}}
 • {{$val.Title}}
 {{- end}}

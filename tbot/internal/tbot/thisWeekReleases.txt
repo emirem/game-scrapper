@@ -1,4 +1,4 @@
-Here are some games comming out this week:
+Here are some #games comming out this week:
 {{range $key, $val := .Games}}
-• {{$val.Title}} - {{$val.Release_date}} on {{$val.Store_id}}
+• {{$val.Title}} - {{$val.Release_date}} on #{{$val.Store_id}}
 {{- end}}
