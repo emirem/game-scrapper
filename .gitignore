@@ -67,3 +67,4 @@ node_modules/
 __pycache__/*
 
 tbot/main
+tbot/dist
