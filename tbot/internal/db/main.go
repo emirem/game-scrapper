@@ -11,7 +11,7 @@ import (
 )
 
 func getConnection() (*sql.DB, error) {
-	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?tls=true", os.Getenv("PS_USERNAME"), os.Getenv("PS_PASSWORD"), os.Getenv("PS_HOST"), os.Getenv("PS_DBNAME")))
+	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?tls=skip-verify", os.Getenv("PS_USERNAME"), os.Getenv("PS_PASSWORD"), os.Getenv("PS_HOST"), os.Getenv("PS_DBNAME")))
 
 	if err != nil {
 		return nil, err
