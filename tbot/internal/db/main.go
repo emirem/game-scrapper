@@ -3,14 +3,22 @@ package db
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"os"
 	"time"
 
 	gms "github.com/emirem/game-scrapper/tbot/internal/games"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/joho/godotenv"
 )
 
 func getConnection() (*sql.DB, error) {
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
 	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s)/%s?tls=true", os.Getenv("PS_USERNAME"), os.Getenv("PS_PASSWORD"), os.Getenv("PS_HOST"), os.Getenv("PS_DBNAME")))
 
 	if err != nil {
