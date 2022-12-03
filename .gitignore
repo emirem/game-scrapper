@@ -68,3 +68,4 @@ __pycache__/*
 
 tbot/main
 tbot/dist
+chromedriver
