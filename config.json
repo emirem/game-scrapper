@@ -120,7 +120,7 @@
       {
         "id": "top_sellers",
         "name": "Top sellers",
-        "url": "https://store.ubi.com/ie/best-sellers",
+        "url": "https://store.ubi.com/ie/trendy?lang=en-ZW",
         "listItemSelector": "#search-result-items > li",
         "itemImageSelector": "img.product_image",
         "itemNameSelector": ".prod-title",
