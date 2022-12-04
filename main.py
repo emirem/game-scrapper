@@ -1,12 +1,16 @@
 import json
 from time import sleep
 import MySQLdb
+import logging
 from selenium import webdriver
 import undetected_chromedriver.v2 as uc
 from selenium.webdriver.common.by import By
 from db import getDBConnection, getInsertQuery
 from selenium.webdriver.remote.webelement import WebElement
 from storeParser import transformGameObj, parseStandardStoreData, parseEpicData
+
+logging.basicConfig(filename='game-scrapper.log',
+                    encoding='utf-8', level=logging.DEBUG)
 
 
 def getDriver():
@@ -40,7 +44,8 @@ def scrape(driver, storeId: str, storeCategory):
         elems: list[WebElement] = driver.find_elements(
             By.CSS_SELECTOR, storeCategory["listItemSelector"])
 
-        print(f"{len(elems)} found for {storeId} - {storeCategory['id']}.")
+        logging.info(
+            f"{len(elems)} found for {storeId} - {storeCategory['id']}.")
 
         for elem in elems:
             info = {}
@@ -53,7 +58,7 @@ def scrape(driver, storeId: str, storeCategory):
             if info["title"] != "":
                 data.append(transformGameObj(info))
     except Exception as err:
-        print("Element query failed.", err)
+        logging.error("Element query failed.", err)
         return []
 
     return data
@@ -72,6 +77,8 @@ def scrapeStores():
         for category in store["categories"]:
             categoryData = scrape(driver, store["id"], category)
 
+            logging.info("Got category data", categoryData)
+
             try:
                 cursor: MySQLdb.cursors.Cursor = conn.cursor()
                 cursor.executemany(query, categoryData)
@@ -79,11 +86,11 @@ def scrapeStores():
                 conn.commit()
                 # saveToJSON(categoryData, f"{store['id']}_{category['id']}")
             except Exception as err:
-                print("Query execute failed.", err)
-                print("categoryData", categoryData)
+                logging.error("Query execute failed.", err)
+                logging.error("categoryData", categoryData)
                 cursor.close()
 
-    print("Done.")
+    logging.info("Done.")
     driver.close()
     conn.close()
 
