@@ -55,6 +55,8 @@ def scrape(driver, storeId: str, storeCategory):
             else:
                 info = parseStandardStoreData(elem, storeId, storeCategory)
 
+            logging.info(f"Got this info {info}")
+
             if info["title"] != "":
                 data.append(transformGameObj(info))
     except Exception as err:
