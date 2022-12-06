@@ -9,8 +9,8 @@ from db import getDBConnection, getInsertQuery
 from selenium.webdriver.remote.webelement import WebElement
 from storeParser import transformGameObj, parseStandardStoreData, parseEpicData
 
-logging.basicConfig(filename='game-scrapper.log',
-                    encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(handlers=[logging.FileHandler('game-scrapper.log', 'w', 'utf-8')],
+                    format='%(asctime)s | %(levelname)s | %(message)s', level=logging.DEBUG)
 
 
 def getDriver():
