@@ -51,7 +51,7 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
         info["img_url"] = imgUrl.get_attribute("src")
     except Exception as err:
         info["img_url"] = ""
-        logging.error(
+        logging.info(
             f"Image element element not found for {storeId} | {category['name']} | {category['itemImageSelector']}")
 
     # Title
@@ -61,7 +61,7 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
         info["title"] = title.text
     except Exception as err:
         info["title"] = ""
-        logging.error(
+        logging.info(
             f"Title element element not found for {storeId} | {category['name']} | {category['itemNameSelector']}")
 
     # Url
@@ -76,7 +76,7 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
             info["url"] = href
     except Exception as err:
         info["url"] = ""
-        logging.error(
+        logging.info(
             f"Url element element not found for {storeId} | {category['name']} | {category['itemLinkSelector']}")
 
     # Details
@@ -87,7 +87,7 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
             info["details"] = details.text
         except Exception as err:
             info["details"] = ""
-            logging.error(
+            logging.info(
                 f"Details element element not found for {storeId} | {category['name']} | {info['title']} | {category['itemDetailsSelector']}")
 
     # Price
@@ -98,7 +98,7 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
             info["price"] = price.text
         except:
             info["price"] = ""
-            logging.error(
+            logging.info(
                 f"Price element not found for {storeId} | {category['name']} | {info['title']} | {category['itemPriceSelector']}")
 
     # Discount amount
@@ -109,7 +109,7 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
             info["discount_amount"] = discountAmount.text
         except:
             info["discount_amount"] = ""
-            logging.error(
+            logging.info(
                 f"Discount element not found for {storeId} | {category['name']} | {info['title']} | {category['itemDiscountSelector']}")
 
     # Release date
@@ -120,7 +120,7 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
             info["release_date"] = parseReleaseDate(releaseDate.text)
         except:
             info["release_date"] = ""
-            logging.error(
+            logging.info(
                 f"Release date element not found for {storeId} | {category['name']} | {info['title']} | {category['releaseDateSelector']}")
 
     return info

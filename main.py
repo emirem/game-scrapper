@@ -10,7 +10,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from storeParser import transformGameObj, parseStandardStoreData, parseEpicData
 
 logging.basicConfig(handlers=[logging.FileHandler('game-scrapper.log', 'w', 'utf-8')],
-                    format='%(asctime)s | %(levelname)s | %(message)s', level=logging.DEBUG)
+                    format='%(asctime)s | %(levelname)s | %(message)s', level=logging.INFO)
 
 
 def getDriver():
