@@ -7,6 +7,7 @@ import undetected_chromedriver.v2 as uc
 from selenium.webdriver.common.by import By
 from db import getDBConnection, getInsertQuery
 from selenium.webdriver.remote.webelement import WebElement
+
 from storeParser import transformGameObj, parseStandardStoreData, parseEpicData
 
 logging.basicConfig(handlers=[logging.FileHandler('game-scrapper.log', 'w', 'utf-8')],
@@ -38,7 +39,7 @@ def scrape(driver, storeId: str, storeCategory):
     driver.get(storeCategory["url"])
 
     # Arbitrary.
-    sleep(1)
+    sleep(2)
 
     try:
         elems: list[WebElement] = driver.find_elements(
@@ -55,10 +56,10 @@ def scrape(driver, storeId: str, storeCategory):
             else:
                 info = parseStandardStoreData(elem, storeId, storeCategory)
 
-            logging.info(f"Got this info {info}")
-
             if info["title"] != "":
                 data.append(transformGameObj(info))
+            else:
+                logging.info("Not going to insert. Title missing.", info)
     except Exception as err:
         logging.error("Element query failed.", err)
         return []
@@ -78,8 +79,6 @@ def scrapeStores():
     for store in config:
         for category in store["categories"]:
             categoryData = scrape(driver, store["id"], category)
-
-            logging.info("Got category data", categoryData)
 
             try:
                 cursor: MySQLdb.cursors.Cursor = conn.cursor()
