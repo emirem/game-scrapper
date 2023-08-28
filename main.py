@@ -6,6 +6,7 @@ from selenium import webdriver
 import undetected_chromedriver.v2 as uc
 from selenium.webdriver.common.by import By
 from db import getDBConnection, getInsertQuery
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.remote.webelement import WebElement
 
 from storeParser import transformGameObj, parseStandardStoreData, parseEpicData
@@ -16,13 +17,13 @@ logging.basicConfig(handlers=[logging.FileHandler('game-scrapper.log', 'w', 'utf
 
 def getDriver():
     options = webdriver.ChromeOptions()
-    options.headless = True
-    options.add_argument("--no-sandbox")
+    # options.headless = True
     options.add_argument("--disable-gpu")
     options.add_argument("disable-infobars")
     options.add_argument("--disable-dev-shm-usage")
 
-    driver: webdriver.Chrome = uc.Chrome(options=options)
+    driver: webdriver.Chrome = uc.Chrome(
+        driver_executable_path=ChromeDriverManager().install(), options=options)
 
     return driver
 
@@ -34,12 +35,12 @@ def saveToJSON(data, fileName: str):
         json.dump(data, f)
 
 
-def scrape(driver, storeId: str, storeCategory):
+def scrape(driver: webdriver.Chrome, storeId: str, storeCategory: str):
     data = []
     driver.get(storeCategory["url"])
 
     # Arbitrary.
-    sleep(2)
+    sleep(3)
 
     try:
         elems: list[WebElement] = driver.find_elements(

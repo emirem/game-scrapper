@@ -105,7 +105,7 @@
       {
         "id": "new_releases",
         "name": "New releases",
-        "url": "https://store.ubi.com/ie/last-games",
+        "url": "https://store.ubisoft.com/ie/category-latest-releases?lang=en-ZW",
         "listItemSelector": "#search-result-items > li",
         "itemImageSelector": "img.product_image",
         "itemNameSelector": ".prod-title",
@@ -120,7 +120,7 @@
       {
         "id": "top_sellers",
         "name": "Top sellers",
-        "url": "https://store.ubi.com/ie/trendy?lang=en-ZW",
+        "url": "https://store.ubisoft.com/ie/category-best-sellers?lang=en-ZW",
         "listItemSelector": "#search-result-items > li",
         "itemImageSelector": "img.product_image",
         "itemNameSelector": ".prod-title",
@@ -134,7 +134,7 @@
       {
         "id": "upcoming_releases",
         "name": "Upcoming releases",
-        "url": "https://store.ubi.com/ie/coming-soon",
+        "url": "https://store.ubisoft.com/ie/category-coming-soon?lang=en-ZW",
         "listItemSelector": "#search-result-items > li",
         "itemImageSelector": "img.product_image",
         "itemNameSelector": ".prod-title",

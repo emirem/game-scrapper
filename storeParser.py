@@ -48,7 +48,8 @@ def parseStandardStoreData(gameElement: WebElement, storeId: str, category):
     try:
         imgUrl: WebElement = gameElement.find_element(
             By.CSS_SELECTOR, category["itemImageSelector"])
-        info["img_url"] = imgUrl.get_attribute("src")
+        imgUrlVal = imgUrl.get_attribute("src")
+        info["img_url"] = "" if len(imgUrlVal) > 255 else imgUrlVal
     except Exception as err:
         info["img_url"] = ""
         logging.info(
