@@ -1,1 +1,4 @@
-tbot/*
+tbot
+__pycache__
+table_setup.sql
+game-scrapper.log

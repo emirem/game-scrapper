@@ -3,7 +3,7 @@ from time import sleep
 import MySQLdb
 import logging
 from selenium import webdriver
-import undetected_chromedriver.v2 as uc
+import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from db import getDBConnection, getInsertQuery
 from webdriver_manager.chrome import ChromeDriverManager
@@ -17,7 +17,7 @@ logging.basicConfig(handlers=[logging.FileHandler('game-scrapper.log', 'w', 'utf
 
 def getDriver():
     options = webdriver.ChromeOptions()
-    # options.headless = True
+    options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("disable-infobars")
     options.add_argument("--disable-dev-shm-usage")
